@@ -1,0 +1,21 @@
+What is Git?? 
+-> It is a distributed Version Control System (Software)
+distributed? -> Copies of every Repository and project 
+-> when we use for documentations and development
+-> Git simply saves your changes, and we can revert (with details)
+
+
+Installation: 
+
+Git for Windows 
+:- https://git-scm.com/download/win
+
+Git for Mac
+:- https://git-scm.com/download/mac
+
+What is a gitbash?? 
+-> Its a terminal similar to our command prompt and mac terminal 
+similarly in windows we have Gitbash 
+->Gitbash is not only for git you can do other works too with it
+
+

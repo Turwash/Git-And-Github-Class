@@ -1,0 +1,171 @@
+(0) To check git Version -> git --Version
+
+(1) Configuring Name & Email in Git
+-> git config --global user.name Turwash (for setting name)
+git config --global user.name (for watching name)
+
+-> git config --global user.email cturwash@gmail.com (for setting email)
+git config --global user.email (for watching email)
+
+(2) Command to open Vs code from gitbash -> code . 
+if not working , go to vs code , Command+shift+p and then search shell command and install
+
+To get a repository we can do two things 
+1) Initialize (init command)
+2) Cloning (from server)
+
+1) git init -> initialised empty git repository , this will create on hidden git folder inside your folder
+
+to see the hidden git folder 
+-> ls -lart (this code shows every hidden file inside your folder .git)
+it just saves all files inside this .git folder (we dont need to go inside it)
+
+Then we will create any file (say index.html) in vs code
+and then we will use command 
+-> git status (to see the current status of your current file)
+initially it will be untracked
+
+must know the difference b/w (untracked -> unmodified -> modified -> staged)
+untracked then we send it to staged
+then from staged we commit (save the changes) and it goes to unmodified
+from unmodified we can either remove file and send back to untracked or
+modify it and send it to modified
+then after modifiedwe again have to staged and commit back to unmodified
+
+Use -> git add filename
+from git add filename the file will be added to staged
+
+-> git commit (command used to commit the file)
+for , git commit , the new ternimal window will open press i and then write Initial commit (kind of note)
+then press esc then :wq (to get out of the terminal window)
+(shortcut for this is (git commit -m "write your commit msg here"))
+
+NOW CHANGES WILL BE TRACKED ::::::::
+
+-> touch command is used to create blank files
+create some files using touh 
+touch new.html
+touch again.html 
+touch onemore.html 
+
+to add all files to staged or tracked 
+use command
+-> git add -A (all files will be tracked)
+
+(see some changes and practice ......... )
+so the process is -> change anything in file then -> git add -A or git add filename
+you can also use git commit -a directly to commit your changes (directly from working tree to committed)
+and to add comments too -> git commit -a -m "comment" (skipped staging area)
+then git commit -m "comment"
+then check git status 
+everything will be updated
+
+-> do git commit only when you are confirm about the changes
+because
+we have 
+-> git checkout filename (command which helps you to give the last committed things back)
+git checkout matches you tu the last commit
+if anyhow you changed everything wrong and wants to get back the last committed
+use git checkout filename
+(your files are safe with git)
+
+-> git log (tells you what you have committed , committed msgs ,and committed time)
+if you want to see only few of the commits and in detail 
+-> git log -p -1 (this -1 value is to see the last 1 commit) (use Q to quit from git log)
+
+
+~~~ why we r using git???
+-> Professionalism 
+-> time saving
+-> Helps in collaborating
+
+-> git diff (compares working directory with staging area , what changes you have donw currently will be seen)
+git diff will not give anything when added once after git add -A it will show nothing
+Now,
+to compare staging area to "Last commit"
+use -> git diff --staged 
+
+
+UNIX COMMANDS :- 
+
+ls (to list all your files in your directory)
+touch filename (creating file)
+rm filename (remove file)
+
+-> git rm filename (this will remove file from working directory and from staging area)
+-> git rm --cached filename(file will remove from staging or tracking area but it will be in directory)
+
+For summarized status: 
+-> git status -s 
+M filename (that means file is modified)
+after git add filename
+git status -s
+M(turned green) that means file is added in staging area
+again , do changes
+M(green)M - two M first - staging area modified , second M - working area modified
+
+
+-> GIT IGNORE : - THE FILES YOU DONT WANT TO TRACK 
+we create a file name , touch .gitignore
+whatever file name we will write inside .gitignore
+those files will be ignored
+wherever we will use those files (even inside folders) it will ignore even after adding commiting
+But if you dont want other files inside folders to be ignored
+write -> /mylogs.log in .gitignore put / before name
+then every files will come up only the file in directory will be ignored 
+then you can add and commit Now
+Also,
+
+git rm --cached filename if you want commited file to uncommit
+here we will uncomit our log folder git rm --cached logs/mylogs.log
+Now, 
+-> *.log (inside .gitignore to ignore everyfiles with .log extension)
+also *.cpp , *.html etc etc
+
+-> To ignore directory (here, ignoreDirectory) 
+-> ignoreDirectory/ (this mean it is a folder)
+
+
+BRANCH IN GIT :- 
+this is just making a copy of the directory and work on that 
+we do this to prevent us from massive distruction
+we create a branch (or a copy) we work on that copy and then we add those to the 
+Master Branch 
+In huge projects changing in master Branch can give massive distruction
+thats why branch is used
+
+Main branch is -> Main branch (by default)
+we can make new branch from it
+
+-> git branch extended (this will create a branch named extended)
+-> git branch (this is to see how many branches we have)
+
+to switch between the branches we use
+-> git branch extended (go to extended branch)
+-> git branch master (come back to master branch)
+
+If you want to remove all your changes and go back to main branch 
+-> git checkout master (all changes will be removed)
+
+you can commit changes in your extended branch and then 
+git commit -a -m "comment" 
+and then you can switch back to git checkout master (everything will come back to master)
+until and unless you havent merged the branches
+
+To merge your branch to master branch 
+-> git merge branchname (here extended)
+
+To create and go to that branch we have two steps
+-> git branch name
+-> git checkout name 
+But one command for both is : - 
+-> git checkout -b name (after this command you will create new branch and will also switch to it)
+
+If you want to remove your directory from Git 
+first go to folder 
+unhide the folders (command+shift+.)->in mac
+then delete .git folder
+the directory will no longer be controlled by git 
+ 
+
+
