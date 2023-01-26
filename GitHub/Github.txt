@@ -31,37 +31,8 @@ it is a url where we will host our repository
 -> git remote (to check the remote name , here, origin)
 -> git remove -v (to check the link of origin (fetch and push))
 
--> git push origin master (push origin to master)
-it will say repository not found 
-because its a private repository
-Now to give read write permission (Giving access of github accoount to computer)
-go to github repo -> setting -> SSH And GPG keys -> generating SSH keys -> generating a new SSH key to your github account
--> generating new SSH key -> copy the code of email id and then add your email id to it and paste the code in terminal
-then it will give you your key fingerprint
-now, we have to deploy this key 
-Scroll down go to adding SSH key 
-select->  eval $(ssh-agent -s) -> after this you will get your agent key process ID
-then add another code -> $ ssh-add ~/id_rsa (identity added)
-Now,
-click -> Add SSH key to github account
-Now take code -> cat ~/ .ssh/id_rsa.pub (cat use to show the content inside it)
-now copy the content 
-go to github repo -> setting -> SSH And GPG keys -> ADD SSH keys
-Title add -> My computer 
-Key -> paste the key 
 
 
--> Now go to your repository , select SSH and copy the link 
-come to terminal 
-write
-git remote set-url origin git@github.com:Turwashetcetcetc.git (add url (shift+insert))
-we do this to change the url we added earlier
-now
--> git push -u origin master 
-(Pushed) when you want to push again directly use -> git push (it will push in the same location)
-every files will be uploaded to github 
-You can also add your branches
--> git push -u origin branchname
 
 TO CLONE GITHUB REPOSITORY 
 1) copy the url of repository
@@ -71,7 +42,7 @@ ls to check the folder
 -> git pull (bring code from github to local repository)
 
 *** IMPORTANT ***
-NO NEED OF SSH KEY , ADD DIRECTLY THROUGH LINK 
+ADD DIRECTLY THROUGH LINK 
 USING COMMANDS IN GITHUB ONLY 
 
 git init
